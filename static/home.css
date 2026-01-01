@@ -1,0 +1,363 @@
+/* ===== HERO ===== */
+.hero {
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed; /* Parallax on desktop */
+    color: white;
+    text-align: center;
+    padding: 220px 20px 120px;
+    position: relative;
+    /* Removed negative margin - we'll control spacing via body padding instead */
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(0, 0, 0, 0.45);
+    z-index: 1;
+}
+
+.hero .container {
+    position: relative;
+    z-index: 2;
+}
+
+.hero h1 {
+    font-size: 3rem;
+    margin-bottom: 20px;
+}
+
+.hero p {
+    font-size: 1.3rem;
+    max-width: 800px;
+    margin: 0 auto 40px;
+}
+
+.hero-actions {
+    margin-top: 30px;
+}
+
+.hero-actions a {
+    margin: 0 10px;
+    padding: 14px 28px;
+    font-size: 1.1rem;
+    display: inline-block;
+}
+
+/* ===== Who We Serve Section ===== */
+.who-we-serve {
+    padding: 100px 20px;
+    background-color: #fafafa;
+}
+
+.who-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 70px;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.who-text h2 {
+    font-size: 2.6rem;
+    margin-bottom: 25px;
+    color: #222;
+}
+
+.who-text p {
+    font-size: 1.15rem;
+    color: #555;
+    line-height: 1.8;
+    max-width: 520px;
+}
+
+/* Image Collage */
+.who-images {
+    position: relative;
+    width: 100%;
+    height: 420px;
+}
+
+.collage-img {
+    position: absolute;
+    width: 240px;
+    height: 240px;
+    object-fit: cover;
+    border-radius: 14px;
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.12);
+}
+
+.collage-1 { top: 0;    left: 0;    z-index: 3; }
+.collage-2 { top: 100px; left: 230px; z-index: 2; }
+.collage-3 { top: 250px; left: 60px;  z-index: 1; }
+
+/* ===== Services Blocks Section ===== */
+.services-blocks {
+    padding: 100px 20px;
+    background-color: #f8f9fa;
+}
+
+.services-blocks h2 {
+    font-size: 2.8rem;
+    margin-bottom: 60px;
+    color: #333;
+    text-align: center;
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.service-block {
+    background: #f8f4f0;
+    padding: 40px 24px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    transition: all 0.3s ease;
+    text-align: center;
+}
+
+.service-block:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
+}
+
+.service-block i {
+    font-size: 4rem;
+    color: #800000;
+    margin-bottom: 30px;
+}
+
+.service-block h3 {
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.service-block p {
+    color: #666;
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+
+.pricing-callout {
+    text-align: center;
+    background: linear-gradient(to bottom, #eef5ff, #f8f4f0);
+    padding: 60px 40px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    max-width: 900px;
+    margin: 80px auto 0;
+}
+
+.pricing-callout h3 {
+    font-size: 2.4rem;
+    margin-bottom: 20px;
+}
+
+.pricing-callout p {
+    font-size: 1.2rem;
+    margin-bottom: 30px;
+    color: #555;
+}
+
+/* ===== Why Us Section ===== */
+.why-us {
+    padding: 100px 20px;
+    background-color: #f8f4f0;
+}
+
+.why-us h2 {
+    font-size: 2.8rem;
+    margin-bottom: 60px;
+    color: #333;
+    text-align: center;
+}
+
+.why-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto 60px;
+}
+
+.why-image img {
+    width: 100%;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.why-content ul {
+    font-size: 1.2rem;
+    color: #555;
+    list-style: none;
+    padding: 0;
+}
+
+.why-content li {
+    margin-bottom: 25px;
+    line-height: 1.7;
+}
+
+.why-content li strong {
+    color: #007bff;
+}
+
+/* ===== Ask Adrianna Section ===== */
+.ask-adrianna {
+    padding: 100px 20px;
+    background-color: #f8f9fa;
+    text-align: center;
+}
+
+.ask-adrianna h2 {
+    font-size: 2.8rem;
+    margin-bottom: 30px;
+    color: #333;
+}
+
+.ask-adrianna p {
+    font-size: 1.2rem;
+    max-width: 800px;
+    margin: 0 auto 40px;
+    color: #555;
+}
+
+.ask-actions a {
+    margin: 10px 15px;
+    padding: 14px 28px;
+    font-size: 1.1rem;
+    display: inline-block;
+}
+
+/* ================ MOBILE RESPONSIVE FIXES ================ */
+
+/* Tablet & Mobile: Disable parallax */
+@media (max-width: 1024px) {
+    .hero {
+        background-attachment: scroll;
+        padding: 180px 20px 100px;
+    }
+}
+
+/* Mobile: Main breakpoint */
+@media (max-width: 768px) {
+    /* Hero adjustments */
+    .hero {
+        padding: 140px 20px 80px;
+    }
+
+    .hero h1 {
+        font-size: 2.4rem;
+    }
+
+    .hero p {
+        font-size: 1.1rem;
+        padding: 0 10px;
+    }
+
+    .hero-actions a {
+        display: block;
+        margin: 15px auto;
+        max-width: 300px;
+    }
+
+    /* Who We Serve - stack vertically */
+    .who-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+        text-align: center;
+    }
+
+    .who-text h2 {
+        font-size: 2.2rem;
+    }
+
+    .who-text p {
+        max-width: none;
+    }
+
+    /* Collage → vertical stack */
+    .who-images {
+        position: static;
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 24px;
+    }
+
+    .collage-img {
+        position: static;
+        width: 100%;
+        max-width: 320px;
+        height: 320px;
+    }
+
+    /* Services grid → 2 columns on tablet, 1 on phone */
+    .services-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 24px;
+    }
+
+    .services-blocks,
+    .why-us,
+    .ask-adrianna,
+    .who-we-serve {
+        padding: 80px 20px;
+    }
+
+    /* Why Us grid → stack */
+    .why-grid {
+        grid-template-columns: 1fr;
+        text-align: center;
+    }
+
+    .ask-actions a {
+        display: block;
+        margin: 15px auto;
+        max-width: 320px;
+    }
+}
+
+/* Small phones */
+@media (max-width: 480px) {
+    .hero {
+        padding: 120px 20px 70px;
+    }
+
+    .hero h1 {
+        font-size: 2rem;
+    }
+
+    .hero p {
+        font-size: 1rem;
+    }
+
+    .services-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .service-block {
+        padding: 40px 20px;
+    }
+
+    .collage-img {
+        height: 280px;
+    }
+
+    h2 {
+        font-size: 2.1rem !important;
+    }
+
+    .pricing-callout {
+        padding: 50px 20px;
+    }
+}

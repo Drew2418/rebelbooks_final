@@ -1,0 +1,315 @@
+/* ===================================
+   GLOBAL
+=================================== */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #ffffff;
+    color: #333333;
+    font-family: 'Playfair Display', serif;
+    line-height: 1.6;
+    padding-top: 80px; /* desktop navbar height */
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* ===================================
+   TYPOGRAPHY
+=================================== */
+h1 {
+    color: white;
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+h2, h3, h4 {
+    color: #1D2833;
+    font-weight: 700;
+}
+
+h2 {
+    text-align: center;
+    margin: 60px 0 40px;
+    font-size: 2.2rem;
+}
+
+p {
+    font-size: 1.15rem;
+    margin-bottom: 1.5rem;
+}
+
+/* ===================================
+   NAVBAR
+=================================== */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 80px;
+    background: #f8f4f0;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+    z-index: 1000;
+    transition: height 0.3s ease;
+}
+
+.navbar-flex {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+}
+
+/* Logo */
+.nav-logo-left img {
+    height: 100px;
+    max-width: 200px;
+    object-fit: contain;
+    transition: height 0.3s ease;
+}
+
+/* Desktop nav links */
+.nav-group-centered {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.nav-group-centered a,
+.dropbtn {
+    color: #333;
+    font-size: 1.1rem;
+    font-weight: 500;
+    text-decoration: none;
+}
+
+.nav-group-centered a:hover,
+.dropbtn:hover {
+    color: #007bff;
+}
+
+/* Right buttons */
+.nav-right {
+    display: flex;
+    gap: 16px;
+}
+
+.client-btn {
+    padding: 8px 16px;
+    border: 2px solid #007bff;
+    border-radius: 4px;
+    color: #007bff;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.signup-btn {
+    padding: 8px 16px;
+    background-color: #007bff;
+    border-radius: 4px;
+    color: #ffffff;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+/* ===================================
+   DROPDOWN (DESKTOP)
+=================================== */
+.dropdown {
+    position: relative;
+}
+
+.dropdown-content {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #ffffff;
+    min-width: 240px;
+    border-radius: 8px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.2s ease, visibility 0.2s ease;
+}
+
+.dropdown-content a {
+    display: block;
+    padding: 12px 20px;
+    color: #333;
+    text-decoration: none;
+}
+
+.dropdown-content a:hover {
+    background: #f0f8ff;
+    color: #007bff;
+}
+
+.dropdown:hover .dropdown-content {
+    opacity: 1;
+    visibility: visible;
+}
+
+
+
+/* ===================================
+   MOBILE STYLES
+=================================== */
+
+@media (max-width: 768px) {
+
+    body {
+        padding-top: 170px;
+    }
+
+    .navbar {
+        height: auto;
+        padding: 16px 0;
+    }
+
+    .navbar-flex {
+        flex-direction: column;
+        align-items: center;
+        gap: 14px;
+    }
+
+    /* Logo moves to top */
+    .nav-logo-left img {
+        height: 85px;
+        max-width: 200px;
+    }
+
+    /* Menu items always visible */
+    .nav-group-centered {
+        display: grid;
+        flex-direction: row;
+        grid-template-columns: repeat(4, 1fr);
+        justify-content: center;
+        align-items: center;
+        gap: 20px;
+        width: 100%;
+        flex-wrap: wrap; /* allows wrap on very small screens */
+    }
+
+
+    .nav-group-centered a {
+        font-size: 1.15rem;
+        padding: 8px 6px;
+    }
+
+    /* Services dropdown – mobile tap style */
+
+    .dropdown {
+        position: relative;
+    }
+
+    .dropdown-content {
+        position: absolute;
+        top: 100%;
+        left: 50%;
+        transform: translateX(-50%);
+        min-width: 220px;
+        text-align: center;
+        z-index: 999;
+    }
+
+    .dropdown-content {
+        position: static;
+        transform: none;
+        opacity: 0;
+        visibility: hidden;
+        max-height: 0;
+        overflow: hidden;
+        background: #f8f4f0;
+        box-shadow: none;
+        transition: max-height 0.3s ease, opacity 0.2s ease;
+        width: 100%;
+        text-align: center;
+    }
+
+    .dropdown.open .dropdown-content {
+        opacity: 1;
+        visibility: visible;
+        max-height: 300px;
+    }
+
+    .dropdown-content a {
+        padding: 10px 0;
+        display: block;
+    }
+
+    /* Disable hover dropdown on mobile */
+    .dropdown:hover .dropdown-content {
+        opacity: 0;
+        visibility: hidden;
+    }
+
+    /* Caret rotation */
+    .mobile-drop i {
+        transition: transform 0.3s ease;
+    }
+
+    .dropdown.open .mobile-drop i {
+        transform: rotate(180deg);
+    }
+
+    /* Hide right-side buttons on mobile (optional) */
+    .nav-right {
+        display: none;
+    }
+}
+
+/* ===================================
+   FOOTER
+=================================== */
+.site-footer {
+    background-color: #1D2833; /* Dark blue */
+    color: #F5E6D3;
+    padding: 50px 20px;
+    margin-top: 100px;
+    text-align: center;
+}
+
+.site-footer .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+/* Footer text */
+.site-footer p {
+    margin: 0;
+    font-size: 1rem;
+    color: #F5E6D3;
+}
+
+/* Social icons container */
+.social-icons {
+    display: flex;
+    gap: 22px;
+}
+
+/* Social icon links */
+.social-icons a {
+    color: #FFA500;
+    font-size: 1.5rem;
+    transition: color 0.2s ease, transform 0.2s ease;
+}
+
+/* Hover / focus */
+.social-icons a:hover,
+.social-icons a:focus {
+    color: #FFD700;
+    transform: translateY(-2px);
+}
