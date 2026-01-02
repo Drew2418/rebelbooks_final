@@ -32,7 +32,7 @@
             <a href="index.html">Home</a>
 
             <div class="dropdown">
-                <a href="#services" class="dropbtn mobile-drop">
+                <a href="#services" class="mobile-drop">
                     Services <i class="fa fa-caret-down"></i>
                 </a>
                 <div class="dropdown-content">
@@ -66,7 +66,7 @@
         </p>
 
         <div class="hero-actions">
-            <a href="#ask-adrianna" class="signup-btn">Ask Adrianna a Question</a>
+            <a href="#ask-adrianna" class="signup-btn">Ask Adrianna</a>
             <a href="login.html" class="signup-btn">Client Login</a>
         </div>
     </div>
@@ -194,57 +194,32 @@
 
 <!-- Mobile Menu JavaScript -->
 <script>
-    const toggleBtn = document.querySelector('.nav-toggle');
-    const mobileMenu = document.querySelector('.mobile-menu');
+document.addEventListener('DOMContentLoaded', () => {
 
-    // Toggle main mobile menu
-    toggleBtn.addEventListener('click', () => {
-        mobileMenu.classList.toggle('open');
-    });
-
-    // Mobile dropdown accordions
-    document.querySelectorAll('.mobile-menu .dropdown > .dropbtn').forEach(btn => {
-        btn.addEventListener('click', (e) => {
-            e.preventDefault();
-            const dropdown = btn.parentElement;
-            dropdown.classList.toggle('open');
-        });
-    });
-
-    // Optional: Close mobile menu when clicking a link (improves UX)
-    document.querySelectorAll('.mobile-menu a').forEach(link => {
-        link.addEventListener('click', () => {
-            mobileMenu.classList.remove('open');
-        });
-    });
-
-    // NEW: Close mobile menu when resizing to desktop
-    window.addEventListener('resize', () => {
-        if (window.innerWidth > 768) {
-            mobileMenu.classList.remove('open');
-            document.querySelectorAll('.mobile-menu .dropdown').forEach(d => {
-                d.classList.remove('open');
-            });
-        }
-    });
-
-    // Optional: Also run once on load
-    if (window.innerWidth > 768) {
-        mobileMenu.classList.remove('open');
-    }
-
-</script>
-
-<script>
+    // Mobile Services dropdown toggle
     document.querySelectorAll('.mobile-drop').forEach(btn => {
         btn.addEventListener('click', e => {
             if (window.innerWidth <= 768) {
                 e.preventDefault();
-                btn.parentElement.classList.toggle('open');
+
+                const dropdown = btn.closest('.dropdown');
+                dropdown.classList.toggle('open');
             }
         });
     });
+
+    // Close dropdown when switching to desktop
+    window.addEventListener('resize', () => {
+        if (window.innerWidth > 768) {
+            document.querySelectorAll('.dropdown.open').forEach(dropdown => {
+                dropdown.classList.remove('open');
+            });
+        }
+    });
+
+});
 </script>
+
 
 
 </body>

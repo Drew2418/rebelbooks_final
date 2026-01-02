@@ -189,52 +189,43 @@ p {
         max-width: 200px;
     }
 
-    /* Menu items always visible */
+    /* ===== MOBILE NAV MENU ===== */
     .nav-group-centered {
         display: grid;
-        flex-direction: row;
-        grid-template-columns: repeat(4, 1fr);
-        justify-content: center;
-        align-items: center;
-        gap: 20px;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
         width: 100%;
-        flex-wrap: wrap; /* allows wrap on very small screens */
+        max-width: 100vw;
+        padding: 0 12px;              /* prevents edge cut-off */
+        gap: 12px;                    /* tighter gap for mobile */
+        justify-items: center;
+        align-items: center;
+        box-sizing: border-box;
     }
-
 
     .nav-group-centered a {
-        font-size: 1.15rem;
-        padding: 8px 6px;
+        font-size: 1.05rem;
+        padding: 8px 4px;
+        white-space: nowrap;          /* prevents wrapping */
+        text-align: center;
     }
 
-    /* Services dropdown – mobile tap style */
+    /* ===== SERVICES DROPDOWN (MOBILE TAP) ===== */
 
     .dropdown {
-        position: relative;
-    }
-
-    .dropdown-content {
-        position: absolute;
-        top: 100%;
-        left: 50%;
-        transform: translateX(-50%);
-        min-width: 220px;
+        width: 100%;
         text-align: center;
-        z-index: 999;
     }
 
     .dropdown-content {
         position: static;
-        transform: none;
         opacity: 0;
         visibility: hidden;
         max-height: 0;
         overflow: hidden;
         background: #f8f4f0;
-        box-shadow: none;
-        transition: max-height 0.3s ease, opacity 0.2s ease;
         width: 100%;
-        text-align: center;
+        transition: max-height 0.3s ease, opacity 0.2s ease;
+        box-shadow: none;
     }
 
     .dropdown.open .dropdown-content {
@@ -246,6 +237,7 @@ p {
     .dropdown-content a {
         padding: 10px 0;
         display: block;
+        width: 100%;
     }
 
     /* Disable hover dropdown on mobile */
@@ -263,11 +255,12 @@ p {
         transform: rotate(180deg);
     }
 
-    /* Hide right-side buttons on mobile (optional) */
+    /* Hide right-side buttons on mobile */
     .nav-right {
         display: none;
     }
 }
+
 
 /* ===================================
    FOOTER
